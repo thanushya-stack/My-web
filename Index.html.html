@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio of M. Thanushya - Finance, Accounting and Audit.">
+  <title>M. Thanushya | Professional Portfolio</title>
+  <style>
+    :root {
+      --navy: #18324b;
+      --teal: #2a7f85;
+      --ink: #263746;
+      --muted: #647585;
+      --pale: #eef3f6;
+      --line: #dce5ea;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #f4f7f9;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .container { width: min(100% - 36px, 1000px); margin: 0 auto; }
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 58px 0 48px;
+      border-bottom: 5px solid var(--teal);
+    }
+    .eyebrow {
+      color: #a9d6d5;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 8px 0 4px; font-size: clamp(2.2rem, 6vw, 3.5rem); line-height: 1.1; }
+    .role { margin: 12px 0 18px; color: #d8e7ee; font-size: 1.05rem; letter-spacing: .08em; }
+    .contact { display: flex; flex-wrap: wrap; gap: 10px 22px; color: #e4edf2; font-size: .92rem; }
+    .contact a { text-decoration: none; border-bottom: 1px solid #8eb8bf; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    nav .container { display: flex; flex-wrap: wrap; gap: 6px 22px; padding: 12px 0; }
+    nav a { color: var(--navy); text-decoration: none; font-size: .88rem; font-weight: 700; }
+    nav a:hover { color: var(--teal); }
+    main { padding: 34px 0 56px; }
+    section {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 26px 28px;
+      margin: 0 0 20px;
+      box-shadow: 0 5px 18px rgba(24,50,75,.045);
+    }
+    h2 {
+      color: var(--navy);
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    h2::after {
+      content: ""; display: block; width: 48px; height: 3px;
+      margin-top: 9px; background: var(--teal); border-radius: 3px;
+    }
+    p { margin: 0 0 10px; }
+    .profile { font-size: 1.02rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile {
+      background: var(--pale); border: 1px solid var(--line);
+      border-radius: 9px; padding: 14px;
+    }
+    .tile strong { display: block; color: var(--navy); margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: .9rem; }
+    .experience-item, .education-item {
+      padding: 0 0 18px; margin: 0 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .experience-item:last-child, .education-item:last-child {
+      border: 0; padding-bottom: 0; margin-bottom: 0;
+    }
+    .item-heading {
+      display: flex; justify-content: space-between; gap: 16px;
+      align-items: baseline; flex-wrap: wrap;
+    }
+    h3 { margin: 0; color: var(--ink); font-size: 1.02rem; }
+    .date { color: var(--teal); font-size: .88rem; font-weight: 700; white-space: nowrap; }
+    .subtext { color: var(--muted); font-size: .92rem; margin: 3px 0 8px; }
+    ul { margin: 8px 0 0; padding-left: 20px; }
+    li { margin: 5px 0; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 9px; }
+    .skill {
+      background: var(--pale); color: var(--navy); border: 1px solid var(--line);
+      border-radius: 30px; padding: 7px 13px; font-size: .9rem;
+    }
+    .cert-list { list-style: none; padding: 0; }
+    .cert-list li { display: grid; grid-template-columns: 54px 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .cert-list li:last-child { border: 0; }
+    .year { color: var(--teal); font-weight: 700; }
+    .strengths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .strengths div { padding: 12px 14px; background: var(--pale); border-radius: 8px; }
+    .connect {
+      background: var(--navy); color: var(--white); border: 0;
+    }
+    .connect h2 { color: var(--white); }
+    .connect p { color: #e2edf2; }
+    .connect a { color: #bce4e2; text-decoration: none; }
+    footer { text-align: center; color: var(--muted); font-size: .82rem; padding: 0 0 28px; }
+    @media (max-width: 700px) {
+      header { padding: 42px 0 36px; }
+      section { padding: 21px 18px; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .strengths { grid-template-columns: 1fr; }
+      nav .container { gap: 8px 14px; }
+    }
+    @media (max-width: 430px) {
+      .grid { grid-template-columns: 1fr; }
+      .contact { display: grid; gap: 7px; }
+    }
+    @media print {
+      body { background: white; }
+      nav { display: none; }
+      header { padding: 25px 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      section { box-shadow: none; break-inside: avoid; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="container">
+      <div class="eyebrow">Professional Portfolio</div>
+      <h1>M. Thanushya</h1>
+      <div class="role">FINANCE &nbsp;|&nbsp; ACCOUNTING &nbsp;|&nbsp; AUDIT</div>
+      <div class="contact">
+        <span>☎ 6380408699</span>
+        <a href="mailto:thanushya@firebird.net.in">thanushya@firebird.net.in</a>
+        <a href="https://www.linkedin.com/in/thanushya-m-464924285" target="_blank" rel="noopener">LinkedIn Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Portfolio navigation">
+    <div class="container">
+      <a href="#profile">Profile</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="profile">
+      <h2>Professional Profile</h2>
+      <p class="profile">
+        PGDM candidate with an academic background in Banking, Financial Services and Insurance,
+        supported by internship experience across accounts payable, finance operations and audit.
+        Familiar with SAP HANA, Tally, MS Excel and Power BI, with practical exposure to vendor
+        master management, invoice accounting, purchase order creation, audit working papers and
+        financial statement preparation.
+      </p>
+    </section>
+
+    <section id="capabilities">
+      <h2>Core Capabilities</h2>
+      <div class="grid">
+        <div class="tile"><strong>Accounts Payable</strong><span>Vendor master management; trade and non-trade invoice accounting</span></div>
+        <div class="tile"><strong>Finance Operations</strong><span>Purchase order creation; store EB bill payments</span></div>
+        <div class="tile"><strong>Audit Support</strong><span>Trial balance testing; vouching; audit working papers</span></div>
+        <div class="tile"><strong>Month-end Support</strong><span>Provisions and closing activities</span></div>
+        <div class="tile"><strong>Financial Reporting</strong><span>Balance sheets and financial statements</span></div>
+        <div class="tile"><strong>Business Tools</strong><span>SAP HANA, Tally, Excel and Power BI</span></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
+
+      <article class="experience-item">
+        <div class="item-heading">
+          <h3>Consolidated Private Limited — Accounts Payable</h3>
+          <span class="date">Jun 2026 – Aug 2026</span>
+        </div>
+        <ul>
+          <li>Handled vendor master management, non-trade purchase order creation, and trade/non-trade invoice accounting using SAP HANA.</li>
+          <li>Managed store EB bill payments and supported month-end provisions and closing activities with the Internal Audit team.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="item-heading">
+          <h3>Today Gold — Finance Intern</h3>
+          <span class="date">Feb 2026 – Apr 2026</span>
+        </div>
+        <ul>
+          <li>Maintained customer purchase and sales records and supported onboarding for gold investment services.</li>
+          <li>Assisted customers with account setup, investment-related queries and service requirements.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="item-heading">
+          <h3>EF Support Private Limited — Audit Intern</h3>
+          <span class="date">Sep 2025 – Jan 2026</span>
+        </div>
+        <ul>
+          <li>Performed audit procedures including trial balance checks, opening balance testing, vouching and working-paper preparation.</li>
+          <li>Prepared balance sheets and financial statements and assisted with audit reporting and VAT compliance.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article class="education-item">
+        <div class="item-heading">
+          <h3>Post Graduate Diploma in Management (PGDM)</h3>
+          <span class="date">2025 – 2027</span>
+        </div>
+        <p class="subtext">Firebird Institute of Research in Management, Coimbatore</p>
+        <p><strong>CGPA:</strong> 8.9 (up to III Trimester)</p>
+      </article>
+      <article class="education-item">
+        <div class="item-heading">
+          <h3>B.Com — Banking, Financial Services and Insurance (Honours)</h3>
+          <span class="date">2022 – 2025</span>
+        </div>
+        <p class="subtext">SASTRA Deemed To Be University, Thanjavur</p>
+        <p><strong>CGPA:</strong> 8.49</p>
+      </article>
+      <article class="education-item">
+        <div class="item-heading">
+          <h3>Higher Secondary Certificate (HSC)</h3>
+          <span class="date">2022</span>
+        </div>
+        <p class="subtext">Kamala Subramaniam Matric Higher Secondary School, Thanjavur</p>
+        <p><strong>Percentage:</strong> 95.8%</p>
+      </article>
+      <article class="education-item">
+        <div class="item-heading">
+          <h3>Secondary School Leaving Certificate (SSLC)</h3>
+          <span class="date">2020</span>
+        </div>
+        <p class="subtext">Kamala Subramaniam Matric Higher Secondary School, Thanjavur</p>
+        <p><strong>Percentage:</strong> 91.2%</p>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skill-list">
+        <span class="skill">SAP HANA</span>
+        <span class="skill">Tally ERP 9</span>
+        <span class="skill">Tally Prime 3.0</span>
+        <span class="skill">MS Excel</span>
+        <span class="skill">MS Word</span>
+        <span class="skill">PowerPoint</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">Accounting Basics</span>
+        <span class="skill">Auditing Basics</span>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>Courses & Certifications</h2>
+      <ul class="cert-list">
+        <li><span class="year">2025</span><span>Financial Modelling and Valuation with AI — Internshala</span></li>
+        <li><span class="year">2025</span><span>Investor Awareness Test — NISM</span></li>
+        <li><span class="year">2024</span><span>Five-Day Online Workshop: Foundation of Stock Market for Beginners — Star International Foundation for Research and Education</span></li>
+        <li><span class="year">2024</span><span>Diploma in Computer Application — Isysway</span></li>
+        <li><span class="year">2024</span><span>Tally Prime (Essential Level 1) — Tally Education Private Limited</span></li>
+        <li><span class="year">2023</span><span>Business Communication Skills Training — Internshala</span></li>
+      </ul>
+    </section>
+
+    <section id="strengths">
+      <h2>Professional Strengths</h2>
+      <div class="strengths">
+        <div>Strong understanding of core finance and accounting concepts</div>
+        <div>Active listening and thoughtful communication</div>
+        <div>Time management and organisation</div>
+        <div>Task prioritisation and meeting deadlines</div>
+      </div>
+    </section>
+
+    <section class="connect" id="contact">
+      <h2>Let’s Connect</h2>
+      <p>Open to opportunities to learn, contribute and grow in finance, accounting and audit-related roles.</p>
+      <p><strong>Phone:</strong> 6380408699<br>
+         <strong>Email:</strong> <a href="mailto:thanushya@firebird.net.in">thanushya@firebird.net.in</a><br>
+         <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/thanushya-m-464924285" target="_blank" rel="noopener">View LinkedIn Profile</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year">2026</span> M. Thanushya · Professional Portfolio
+  </footer>
+</body>
+</html>
